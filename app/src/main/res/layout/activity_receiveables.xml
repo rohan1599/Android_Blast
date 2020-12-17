@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".receiveables">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="14dp"
+            android:theme="@style/AppTheme.ThemeOverlay"
+            app:layout_constraintBottom_toTopOf="@+id/image2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="Receivables">
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="320dp"
+            android:layout_height="350dp"
+            android:layout_marginTop="25dp"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout2">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.tiper.MaterialSpinner
+                    android:id="@+id/sp_company"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:hint="Select Company"
+                    app:errorEnabled="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/sp_plant"/>
+
+                <com.tiper.MaterialSpinner
+                    android:id="@+id/sp_plant"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Select Plant"
+                    app:errorEnabled="true"
+                    app:layout_constraintEnd_toEndOf="@+id/sp_company"
+                    app:layout_constraintStart_toStartOf="@+id/sp_company"
+                    app:layout_constraintTop_toBottomOf="@+id/sp_company"
+                    app:layout_constraintBottom_toTopOf="@+id/sp_customer"/>
+
+                <com.tiper.MaterialSpinner
+                    android:id="@+id/sp_customer"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Select Customer"
+                    app:errorEnabled="true"
+                    app:layout_constraintEnd_toEndOf="@+id/sp_plant"
+                    app:layout_constraintStart_toStartOf="@+id/sp_plant"
+                    app:layout_constraintTop_toBottomOf="@+id/sp_plant"
+                    app:layout_constraintBottom_toTopOf="@+id/radio"/>
+
+                <RadioGroup
+                    android:id="@+id/radio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sp_customer">
+
+                    <RadioButton
+                        android:id="@+id/rb_customer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="49dp"
+                        android:layout_marginLeft="50dp"
+                        android:checked="true"
+                        android:onClick="checkradio"
+                        android:text="Customer" />
+
+                    <RadioButton
+                        android:id="@+id/rb_bill"
+                        android:layout_width="100dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="60dp"
+                        android:onClick="checkradio"
+                        android:text="Bill" />
+                </RadioGroup>
+
+
+                <Button
+                    android:id="@+id/btn_receivableDetails"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/roundcorner"
+                    android:fontFamily="@font/roboto_medium"
+                    android:onClick="receiveableList"
+                    android:text="Filter"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/sp_customer"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/sp_customer"
+                    app:layout_constraintTop_toBottomOf="@+id/radio"
+                    app:layout_constraintVertical_bias="0.319" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+             <com.google.android.material.navigation.NavigationView
+                 android:layout_width="wrap_content"
+                 android:layout_height="match_parent"
+                 app:headerLayout="@layout/nav_header"
+                 app:menu="@menu/main_menu"
+                 android:layout_gravity="start"
+                 android:id="@+id/nv1">
+
+             </com.google.android.material.navigation.NavigationView>
+         </androidx.drawerlayout.widget.DrawerLayout>
+

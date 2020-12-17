@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="345dp"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        android:padding="10dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+
+            <TextView
+                android:id="@+id/docno"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Order no : #"
+                android:textColor="#5B2C6F"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/vendorname"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/doc_no"
+                android:layout_width="164dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Code"
+                android:textColor="#5B2C6F"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/vendorname"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/docno"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/doc_date"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="date"
+                android:textColor="#060606"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/doc_no"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                            android:id="@+id/vendorname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/doc_no"
+                            android:paddingLeft="10dp"
+                            android:text="Customer"
+                            android:textSize="14sp"
+                android:textColor="#060606"
+                            app:layout_constraintEnd_toEndOf="@+id/doc_no"
+                            app:layout_constraintStart_toStartOf="@+id/doc_no"
+                            app:layout_constraintTop_toBottomOf="@+id/doc_no" />
+
+            <TextView
+                android:id="@+id/doc_amt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:text="Base Amt : "
+                android:textColor="#060606"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vendorname"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                            android:id="@+id/btp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/doc_date"
+                android:textColor="#060606"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/amt"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.057"
+                            app:layout_constraintStart_toEndOf="@+id/bill_party"
+                            app:layout_constraintTop_toBottomOf="@+id/vendorname"
+                            app:layout_constraintVertical_bias="0.086" />
+
+            <TextView
+                android:id="@+id/docamt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/qty"
+                android:textColor="#060606"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/doc_amt"
+                app:layout_constraintTop_toBottomOf="@+id/vendorname"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                            android:id="@+id/bill_party"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/doc_date"
+                            android:layout_marginTop="10dp"
+                            android:text="Balance Amt : "
+                            android:textSize="14sp"
+                android:textColor="#060606"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.712"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/vendorname"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

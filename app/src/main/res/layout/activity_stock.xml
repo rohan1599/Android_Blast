@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Stock">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:theme="@style/AppTheme.ThemeOverlay"
+            app:layout_constraintBottom_toTopOf="@+id/image2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="Stock/Inventory">
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="319dp"
+            android:layout_height="355dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
+            android:elevation="8dp"
+            android:padding="10dp"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+
+            <!-- <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textField"
+                android:layout_width="300dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="15dp"
+                app:boxBackgroundMode="outline"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                app:endIconMode="dropdown_menu">
+
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawableRight="@drawable/dropdownicon"
+                    android:drawableTint="#D3D3D3"
+                    />
+
+
+            </com.google.android.material.textfield.TextInputLayout>-->
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <com.tiper.MaterialSpinner
+                    android:id="@+id/sp_company"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="Select Company"
+                    app:errorEnabled="true"
+                    app:errorIconDrawable="@drawable/ic_error_black_24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.533"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--     <AutoCompleteTextView
+                     android:id="@+id/at1"
+                     android:layout_width="300dp"
+                     android:layout_height="43dp"
+                     android:layout_marginTop="20dp"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintTop_toTopOf="parent"
+                     tools:ignore="MissingConstraints"
+                     tools:layout_editor_absoluteX="16dp" />
+
+                 <Spinner
+                     android:id="@+id/spinner"
+                     android:layout_width="300dp"
+                     android:layout_height="43dp"
+                     app:layout_constraintBottom_toBottomOf="parent"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintHorizontal_bias="0.0"
+                     app:layout_constraintStart_toStartOf="@+id/at1"
+                     app:layout_constraintTop_toTopOf="@+id/at1"
+                     app:layout_constraintVertical_bias="0.0" />
+
+
+
+                 <AutoCompleteTextView
+                     android:id="@+id/at2"
+                     android:layout_width="300dp"
+                     android:layout_height="43dp"
+                     android:layout_marginTop="6dp"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintTop_toBottomOf="@+id/at1"
+                     tools:ignore="MissingConstraints"
+                     tools:layout_editor_absoluteX="16dp" />
+
+
+                 <Spinner
+                     android:id="@+id/spinner1"
+                     android:layout_width="300dp"
+                     android:layout_height="43dp"
+
+                     app:layout_constraintBottom_toBottomOf="parent"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintHorizontal_bias="0.058"
+                     app:layout_constraintStart_toStartOf="@+id/at2"
+                     app:layout_constraintTop_toTopOf="@+id/at2"
+                     app:layout_constraintVertical_bias="0.0" />-->
+
+
+                <com.tiper.MaterialSpinner
+                    android:id="@+id/sp_plant"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Select Plant"
+                    app:errorEnabled="true"
+                    app:errorIconDrawable="@drawable/ic_error_black_24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sp_company" />
+
+                <com.tiper.MaterialSpinner
+                    android:id="@+id/sp_material"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Select Material"
+                    app:errorEnabled="true"
+                    app:errorIconDrawable="@drawable/ic_error_black_24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tl_materialgrp_error" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tl_materialgrp_error"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Select Material Group"
+                    android:orientation="vertical"
+                    app:errorEnabled="true"
+                    app:hintAnimationEnabled="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sp_plant">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_material_grp"
+                        android:layout_width="300dp"
+                        android:layout_height="40dp"
+                        android:clickable="true"
+                        android:cursorVisible="false"
+                        android:drawablePadding="25dp"
+                        android:focusable="false"
+                        android:padding="5dp"
+                        android:shadowColor="#D3D3D3" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageView
+                    android:id="@+id/dropdown_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="270dp"
+                    android:paddingBottom="5dp"
+                    android:src="@drawable/ic_arrow_drop_down_black_24dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tl_materialgrp_error"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tl_materialgrp_error"
+                    app:layout_constraintTop_toTopOf="@+id/tl_materialgrp_error" />
+
+                <!--   <AutoCompleteTextView
+                     android:id="@+id/at4"
+                     android:layout_width="300dp"
+                     android:layout_height="43dp"
+                     app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+                     app:layout_constraintHorizontal_bias="1.0"
+                     app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+                     app:layout_constraintTop_toTopOf="@+id/spinner3"
+                     tools:ignore="MissingConstraints" />
+
+                 <Spinner
+                     android:id="@+id/spinner3"
+                     android:layout_width="300dp"
+                     android:layout_height="43dp"
+                     app:layout_constraintBottom_toBottomOf="parent"
+                     app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+                     app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+                     app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+                     app:layout_constraintVertical_bias="0.088" />-->
+
+                <Button
+                    android:id="@+id/btn_stockDetails"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:background="@drawable/roundcorner"
+                    android:text="Filter"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sp_material" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+         <com.google.android.material.navigation.NavigationView
+             android:layout_width="wrap_content"
+             android:layout_height="match_parent"
+             app:headerLayout="@layout/nav_header"
+             app:menu="@menu/main_menu"
+             android:layout_gravity="start"
+             android:id="@+id/nv1">
+
+         </com.google.android.material.navigation.NavigationView>
+     </androidx.drawerlayout.widget.DrawerLayout>

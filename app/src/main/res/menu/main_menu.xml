@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+        <item
+            android:id="@+id/menuhome"
+            android:title="Home"/>
+
+    <item
+        android:id="@+id/menustock"
+        android:title="Stock/Inventory"/>
+
+    <item
+        android:id="@+id/menupoapprovals"
+        android:title="PO/PR Approvals"
+        />
+
+    <item
+        android:id="@+id/menureceiveables"
+        android:title="Receiveables"
+        />
+
+    <item
+        android:id="@+id/menupayables"
+        android:title="Payables"
+        />
+
+    <item
+        android:id="@+id/menusales"
+        android:title="Sales Report"
+        />
+
+    <item
+        android:id="@+id/menupurchase"
+        android:title="Purchase report"
+        />
+
+       <item
+           android:id="@+id/menulogout"
+           android:title="Logout"
+           />
+</menu>

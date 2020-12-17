@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.drawerlayout.widget.DrawerLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".poapproval">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="14dp"
+            android:theme="@style/AppTheme.ThemeOverlay"
+            app:layout_constraintBottom_toTopOf="@+id/image2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="PO/PR Approval">
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <TextView
+            android:id="@+id/prefs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:text="Please Choose Your Preference :"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appbar" />
+        <RadioGroup
+            android:id="@+id/radiogrp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/prefs">
+
+            <RadioButton
+                android:id="@+id/poType"
+                android:layout_marginStart="30dp"
+                android:checked="true"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="PO-Approval"/>
+
+            <RadioButton
+                android:id="@+id/prmType"
+                android:textSize="18sp"
+                android:layout_marginStart="45dp"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="PR-Approval"/>
+        </RadioGroup>
+
+
+          <androidx.cardview.widget.CardView
+              android:id="@+id/poTypecontainer"
+              android:layout_width="319dp"
+              android:layout_height="285dp"
+              android:layout_marginTop="20dp"
+              android:padding="10dp"
+              android:visibility="visible"
+              app:cardCornerRadius="8dp"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/radiogrp">
+
+              <androidx.constraintlayout.widget.ConstraintLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+
+                  <com.tiper.MaterialSpinner
+                      android:id="@+id/sp_company"
+                      android:layout_width="300dp"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="15dp"
+                      android:hint="Select Company"
+                      app:errorEnabled="true"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toTopOf="parent"
+                      app:layout_constraintBottom_toTopOf="@+id/sp_plant"/>
+
+
+                  <com.tiper.MaterialSpinner
+                      android:id="@+id/sp_plant"
+                      android:layout_width="300dp"
+                      android:layout_height="wrap_content"
+                      android:hint="Select Plant"
+                      app:errorEnabled="true"
+                      app:layout_constraintEnd_toEndOf="@+id/sp_company"
+                      app:layout_constraintStart_toStartOf="@+id/sp_company"
+                      app:layout_constraintTop_toBottomOf="@+id/sp_company"
+                      app:layout_constraintBottom_toTopOf="@+id/sp_potype"/>
+
+                  <com.tiper.MaterialSpinner
+                      android:id="@+id/sp_potype"
+                      android:layout_width="300dp"
+                      android:layout_height="wrap_content"
+                      android:hint="Select Po-Type"
+                      app:errorEnabled="true"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toBottomOf="@+id/sp_plant"
+                      app:layout_constraintBottom_toTopOf="@+id/btn_poApprovalDetails"/>
+
+                  <Button
+                      android:id="@+id/btn_poApprovalDetails"
+                      android:layout_width="300dp"
+                      android:layout_height="40dp"
+                      android:background="@drawable/roundcorner"
+                      android:fontFamily="@font/roboto_medium"
+                      android:text="Filter"
+                      android:textAllCaps="false"
+                      android:textColor="#FFFFFF"
+                      app:layout_constraintEnd_toEndOf="@+id/sp_potype"
+                      app:layout_constraintStart_toStartOf="@+id/sp_potype"
+                      app:layout_constraintTop_toBottomOf="@+id/sp_potype" />
+              </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/prmTypecontainer"
+            android:layout_width="319dp"
+            android:layout_height="285dp"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radiogrp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.tiper.MaterialSpinner
+                    android:id="@+id/sp_prmcompany"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:hint="Select Company"
+                    app:errorEnabled="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/sp_prmplant"/>
+
+
+                <com.tiper.MaterialSpinner
+                    android:id="@+id/sp_prmplant"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Select Plant"
+                    app:errorEnabled="true"
+                    app:layout_constraintEnd_toEndOf="@+id/sp_prmcompany"
+                    app:layout_constraintStart_toStartOf="@+id/sp_prmcompany"
+                    app:layout_constraintTop_toBottomOf="@+id/sp_prmcompany"
+                    app:layout_constraintBottom_toTopOf="@+id/sp_prmpotype"/>
+
+                <com.tiper.MaterialSpinner
+                    android:id="@+id/sp_prmpotype"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Select PR-Type"
+                    app:errorEnabled="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sp_prmplant"
+                    app:layout_constraintBottom_toTopOf="@+id/btn_poApprovalPrmDetails"/>
+
+                <Button
+                    android:id="@+id/btn_poApprovalPrmDetails"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/roundcorner"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Filter"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintEnd_toEndOf="@+id/sp_prmpotype"
+                    app:layout_constraintStart_toStartOf="@+id/sp_prmpotype"
+                    app:layout_constraintTop_toBottomOf="@+id/sp_prmpotype" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+               <com.google.android.material.navigation.NavigationView
+                   android:layout_width="wrap_content"
+                   android:layout_height="match_parent"
+                   app:headerLayout="@layout/nav_header"
+                   app:menu="@menu/main_menu"
+                   android:layout_gravity="start"
+                   android:id="@+id/nv1">
+
+               </com.google.android.material.navigation.NavigationView>
+           </androidx.drawerlayout.widget.DrawerLayout>

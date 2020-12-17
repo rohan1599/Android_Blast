@@ -1,0 +1,49 @@
+<resources>
+    <string-array name="company">
+        <item>Select Company</item>
+        <item>Polyrub Extrusions</item>
+
+    </string-array>
+
+    <string-array name="plant">
+        <item> Select Plant</item>
+    </string-array>
+
+    <string-array name="material">
+        <item> Select Material Group </item>
+    </string-array>
+
+    <string-array name="smaterial">
+        <item> Select Material</item>
+    </string-array>
+
+    <string-array name="potype">
+        <item> Select PO Type</item>
+    </string-array>
+
+    <string-array name="sotype">
+        <item> Select SO Type</item>
+    </string-array>
+
+    <string-array name="customer">
+        <item> Select Customer</item>
+    </string-array>
+
+    <string-array name="vendor">
+        <item> Select Vendor</item>
+    </string-array>
+
+    <string-array name="product">
+        <item> Select Product</item>
+    </string-array>
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="descr">Descr :</string>
+    <string name="amt">Amt :</string>
+    <string name="Amt">Amt :</string>
+    <string name="qty">qty</string>
+    <string name="Qty">Qty :</string>
+    <string name="Code">Code:</string>
+
+</resources>
